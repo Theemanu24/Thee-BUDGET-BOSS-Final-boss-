@@ -1,0 +1,106 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom theme based on the gaming aesthetic */
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 50% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 50% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 300 100% 50%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 260 50% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 260 30% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 285 100% 60%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 300 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 260 50% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 300 100% 50%;
+    --sidebar-primary-foreground: 0 0% 3%;
+    --sidebar-accent: 260 50% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 260 30% 20%;
+    --sidebar-ring: 300 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 text-foreground;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .gaming-card {
+    @apply bg-gradient-to-br from-purple-900/60 to-pink-900/40 backdrop-blur-lg border border-purple-500/40 rounded-xl;
+    box-shadow: 
+      0 0 20px rgba(168, 85, 247, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  .gaming-card:hover {
+    box-shadow: 
+      0 0 25px rgba(168, 85, 247, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(168, 85, 247, 0.6);
+  }
+}
+
+/* Simple fade animation for modals */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .gaming-card {
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+  }
+}
